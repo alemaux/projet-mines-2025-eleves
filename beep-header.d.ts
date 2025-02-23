@@ -11,14 +11,14 @@ import { LitElement } from 'lit';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-export declare class MyElement extends LitElement {
+export declare class BeepHeader extends LitElement {
     static styles: import("lit").CSSResult[];
     contenu_message: string;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        'beep-header': MyElement;
+        'beep-header': BeepHeader;
     }
 }
 //# sourceMappingURL=beep-header.d.ts.map

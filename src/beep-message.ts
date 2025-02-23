@@ -11,7 +11,7 @@ import {fr} from 'date-fns/locale';
 
 
 @customElement('beep-message')
-export class MyElement extends LitElement {
+export class BeepMessage extends LitElement {
   
   @property({type : String})
   content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
@@ -86,6 +86,6 @@ export class MyElement extends LitElement {
   
 declare global {
   interface HTMLElementTagNameMap {
-    'beep-message': MyElement;
+    'beep-message': BeepMessage;
   }
 }

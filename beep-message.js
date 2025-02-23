@@ -13,7 +13,7 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { formatDistanceToNow } from 'date-fns';
 import { fr } from 'date-fns/locale';
-let MyElement = class MyElement extends LitElement {
+let BeepMessage = class BeepMessage extends LitElement {
     constructor() {
         super(...arguments);
         this.content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
@@ -52,7 +52,7 @@ let MyElement = class MyElement extends LitElement {
         }
     }
 };
-MyElement.styles = [css `
+BeepMessage.styles = [css `
     .message{
       height: fit-content;
       width:80%;
@@ -77,21 +77,21 @@ MyElement.styles = [css `
     }`];
 __decorate([
     property({ type: String })
-], MyElement.prototype, "content", void 0);
+], BeepMessage.prototype, "content", void 0);
 __decorate([
     property({ type: String })
-], MyElement.prototype, "date", void 0);
+], BeepMessage.prototype, "date", void 0);
 __decorate([
     property({ type: String })
-], MyElement.prototype, "author", void 0);
+], BeepMessage.prototype, "author", void 0);
 __decorate([
     property({ type: Number })
-], MyElement.prototype, "likes", void 0);
+], BeepMessage.prototype, "likes", void 0);
 __decorate([
     property({ type: Boolean })
-], MyElement.prototype, "liked", void 0);
-MyElement = __decorate([
+], BeepMessage.prototype, "liked", void 0);
+BeepMessage = __decorate([
     customElement('beep-message')
-], MyElement);
-export { MyElement };
+], BeepMessage);
+export { BeepMessage };
 //# sourceMappingURL=beep-message.js.map

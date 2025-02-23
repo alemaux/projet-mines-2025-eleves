@@ -10,7 +10,7 @@ import '@kor-ui/kor';
 
 
 @customElement('beep-footer')
-export class MyElement extends LitElement {
+export class BeepHeader extends LitElement {
   static override styles = [
     css`footer{
       position: fixed;
@@ -26,6 +26,13 @@ export class MyElement extends LitElement {
     }`,
     css`footer >*{
       margin:10px;
+    }`,
+  css`footer .middle{
+      width : 60%;
+    }`,
+  css`footer .middle input{
+      width : 100%;
+      height : 50px;
     }`];
 
   @property()
@@ -37,8 +44,8 @@ export class MyElement extends LitElement {
             <span>
                 <label>Message : </label>
             </span>
-            <span>
-                <input >
+            <span class="middle">
+                <input placeholder="Dites-nous ce que vous pensez" >
             </span>
             <span> 
                 <kor-button label="Envoyer" color="Primary"></kor-button>
@@ -50,6 +57,6 @@ export class MyElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'beep-footer': MyElement;
+    'beep-footer': BeepHeader;
   }
 }

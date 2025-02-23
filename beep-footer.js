@@ -12,7 +12,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import '@kor-ui/kor';
-let MyElement = class MyElement extends LitElement {
+let BeepHeader = class BeepHeader extends LitElement {
     constructor() {
         super(...arguments);
         this.contenu_message = "";
@@ -23,8 +23,8 @@ let MyElement = class MyElement extends LitElement {
             <span>
                 <label>Message : </label>
             </span>
-            <span>
-                <input >
+            <span class="middle">
+                <input placeholder="Dites-nous ce que vous pensez" >
             </span>
             <span> 
                 <kor-button label="Envoyer" color="Primary"></kor-button>
@@ -33,7 +33,7 @@ let MyElement = class MyElement extends LitElement {
     `;
     }
 };
-MyElement.styles = [
+BeepHeader.styles = [
     css `footer{
       position: fixed;
       bottom: 0;
@@ -48,13 +48,20 @@ MyElement.styles = [
     }`,
     css `footer >*{
       margin:10px;
+    }`,
+    css `footer .middle{
+      width : 60%;
+    }`,
+    css `footer .middle input{
+      width : 100%;
+      height : 50px;
     }`
 ];
 __decorate([
     property()
-], MyElement.prototype, "contenu_message", void 0);
-MyElement = __decorate([
+], BeepHeader.prototype, "contenu_message", void 0);
+BeepHeader = __decorate([
     customElement('beep-footer')
-], MyElement);
-export { MyElement };
+], BeepHeader);
+export { BeepHeader };
 //# sourceMappingURL=beep-footer.js.map

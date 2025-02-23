@@ -7,6 +7,7 @@
 import {LitElement, html, css} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import './beep-message.js';
+import {Task} from '@lit/task';
 
 type Message = {
   content: string;
@@ -26,14 +27,14 @@ const messages : Message[] = [
   {
     content:"bien d'accord le reuf, je suis Elon Musk",
     author : "Elon Musk",
-    date : "2020-10-05T14:48:00.000Z",
+    date : "2025-10-05T14:48:00.000Z",
     likes : 0,
     liked:true,
   },
   {
     content:"poggers",
     author:"rd.chatter",
-    date:"1050-10-05T14:48:00.000Z",
+    date:"0130-10-05T14:48:00.000Z",
     likes : 180000000,
     liked:true,
   },
@@ -45,46 +46,63 @@ const messages : Message[] = [
     liked:true,
   },
   {
-    content:"kekw",
-    author:"rd.chatter",
-    date:"2011-10-05T14:48:00.000Z",
+    content:"omg wisigoths",
+    author:"Romulus Auguste",
+    date:"0476-10-05T14:48:00.000Z",
     likes : 0,
-    liked:true,
+    liked:false,
   },
   {
-    content:"poggers",
-    author:"rd.chatter",
-    date:"2011-10-05T14:48:00.000Z",
+    content:"putain dsl la team",
+    author:"Versingétorix",
+    date:"-000051-01-11T23:50:39.000Z",
     likes : 0,
-    liked:true,
+    liked:false,
   }
 ]
 
 @customElement('beep-message-list')
-export class MyElement extends LitElement {
-  
- 
+export class BeepMessageList extends LitElement {
+  static override styles = css``;
 
-  static override styles = css``
-  ;
+  _messagesTask = new Task(this, {
+    args:() => ["test"],
+    task: () =>{
+      return new Promise<Message[]>((resolve)=>{
+        setTimeout(() => {
+          resolve(messages);
+        }, 2000);
+      });
+    }
+  })
+
+  //async _pokemonTask = new Task(this, {
+    //
+  //}
+
+  //)
 
   override render() {
-    return html`${messages.map(message => html`
-      <beep-message
-      content=${message.content}
-      date=${message.date}
-      ?liked=${message.liked}
-      likes=${message.likes}
-      author=${message.author}>
-      `)}
-     
-    `;
-  }
+    return html`${this._messagesTask.render({
+      initial : ()=>html`<p>Waiting for resonse</p>`,
+      pending : ()=>html`<p>Running task...</p>`,
+      complete : (messages)=>html`
+        ${messages.map(message => html`
+          <beep-message
+            content=${message.content}
+            date=${message.date}
+            ?liked=${message.liked}
+            likes=${message.likes}
+            author=${message.author}>
+          </beep-message>`)
+          }`
+    })}`
   
+  }
 }
   
 declare global {
   interface HTMLElementTagNameMap {
-    'beep-message-list': MyElement;
+    'beep-message-list': BeepMessageList;
   }
 }

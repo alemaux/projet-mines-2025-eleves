@@ -18,7 +18,7 @@ import { customElement, property } from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-let MyElement = class MyElement extends LitElement {
+let BeepHeader = class BeepHeader extends LitElement {
     constructor() {
         super(...arguments);
         this.contenu_message = "";
@@ -37,7 +37,7 @@ let MyElement = class MyElement extends LitElement {
     `;
     }
 };
-MyElement.styles = [css `
+BeepHeader.styles = [css `
     header{
     position : fixed;
     width:100%;
@@ -53,9 +53,9 @@ MyElement.styles = [css `
 ];
 __decorate([
     property()
-], MyElement.prototype, "contenu_message", void 0);
-MyElement = __decorate([
+], BeepHeader.prototype, "contenu_message", void 0);
+BeepHeader = __decorate([
     customElement('beep-header')
-], MyElement);
-export { MyElement };
+], BeepHeader);
+export { BeepHeader };
 //# sourceMappingURL=beep-header.js.map

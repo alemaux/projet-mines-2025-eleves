@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 import { LitElement } from 'lit';
-export declare class MyElement extends LitElement {
+export declare class BeepMessage extends LitElement {
     content: string;
     date: string;
     author: string;
@@ -17,7 +17,7 @@ export declare class MyElement extends LitElement {
 }
 declare global {
     interface HTMLElementTagNameMap {
-        'beep-message': MyElement;
+        'beep-message': BeepMessage;
     }
 }
 //# sourceMappingURL=beep-message.d.ts.map

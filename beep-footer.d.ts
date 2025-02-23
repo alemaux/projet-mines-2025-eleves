@@ -5,14 +5,14 @@
  */
 import { LitElement } from 'lit';
 import '@kor-ui/kor';
-export declare class MyElement extends LitElement {
+export declare class BeepHeader extends LitElement {
     static styles: import("lit").CSSResult[];
     contenu_message: string;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        'beep-footer': MyElement;
+        'beep-footer': BeepHeader;
     }
 }
 //# sourceMappingURL=beep-footer.d.ts.map

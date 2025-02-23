@@ -15,7 +15,7 @@ import {customElement, property} from 'lit/decorators.js';
  * @csspart button - The button
  */
 @customElement('beep-header')
-export class MyElement extends LitElement {
+export class BeepHeader extends LitElement {
   static override styles = [css`
     header{
     position : fixed;
@@ -52,6 +52,6 @@ contenu_message = "";
 
 declare global {
   interface HTMLElementTagNameMap {
-    'beep-header': MyElement;
+    'beep-header': BeepHeader;
   }
 }
